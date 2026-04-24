@@ -21,32 +21,10 @@ Name::Name(const std::string& fullName) {
     }
 }
 
-std::string Name::getInitials() const {
-    std::string initials;
-    for (const auto& name : first_names_) {
-        if (!name.empty()) {
-            initials += name[0];
-            initials += '.';
-        }
-    }
-    return initials;
-}
-
-std::string Name::getFirstName() const {
-    std::string result;
-    for (std::size_t i = 0; i < first_names_.size(); ++i) {
-        if (i > 0) {
-            result += ' ';
-        }
-        result += first_names_[i];
-    }
-    return result;
-}
-
-std::string Name::getLastName() const {
+const std::string& Name::last_name() const {
     return last_name_;
 }
 
-std::string Name::getFullName() const {
-    return getFirstName() + ' ' + last_name_;
+std::string Name::full_name() const {
+    return first_names_.front() + ' ' + last_name_;
 }

@@ -2,7 +2,7 @@
 #include <stdexcept>
 #include <string>
 
-#include "Name.h"
+#include "name.h"
 
 int main() {
     std::cout << "Enter your full name: ";
@@ -12,10 +12,9 @@ int main() {
     try {
         Name name(input);
 
-        std::cout << "Initials  : " << name.getInitials() << std::endl;
-        std::cout << "First name: " << name.getFirstName() << std::endl;
-        std::cout << "Full name : " << name.getFullName() << std::endl;
-        std::cout << "Last name : " << name.getLastName() << std::endl;
+        std::cout << "Initials  : " << "???" << std::endl;
+        std::cout << "Full name : " << name.full_name() << std::endl;
+        std::cout << "Last name : " << name.last_name() << std::endl;
     } catch (const std::invalid_argument& e) {
         std::cerr << "Error: " << e.what() << std::endl;
         return 1;
