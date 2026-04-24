@@ -26,5 +26,10 @@ const std::string& Name::last_name() const {
 }
 
 std::string Name::full_name() const {
-    return first_names_.front() + ' ' + last_name_;
+    std::ostringstream oss{};
+    for (const auto& name : first_names_) {
+        oss << name << " ";
+    }
+    oss << last_name_;
+    return oss.str();
 }
